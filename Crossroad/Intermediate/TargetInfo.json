@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Crossroad",
+			"Path": "C:\\Users\\piped\\OneDrive\\Documents\\Unreal Projects\\Crossroad\\Crossroad\\Crossroad\\Source\\Crossroad.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "CrossroadEditor",
+			"Path": "C:\\Users\\piped\\OneDrive\\Documents\\Unreal Projects\\Crossroad\\Crossroad\\Crossroad\\Source\\CrossroadEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Crossroad.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{E3BAB9D9-D013-4D63-9EF0-F3E5C24AB3A7}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Crossroad.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\CrossroadEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{2FF4B00B-C0FD-431F-AE89-EE0DBF57CC5C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Crossroad">
+      <UniqueIdentifier>{E740F10A-F224-4438-B8F5-467F09BB8DE6}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Crossroad\Crossroad.Build.cs">
+      <Filter>Source\Crossroad</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Crossroad\Crossroad.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\Crossroad.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Crossroad\CrossroadCharacter.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\CrossroadCharacter.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Crossroad\CrossroadGameMode.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\CrossroadGameMode.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Crossroad\CrossroadHUD.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\CrossroadHUD.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Crossroad\CrossroadProjectile.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\CrossroadProjectile.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
