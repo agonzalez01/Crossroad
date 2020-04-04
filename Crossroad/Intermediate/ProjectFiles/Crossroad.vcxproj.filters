@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Crossroad.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{E3BAB9D9-D013-4D63-9EF0-F3E5C24AB3A7}</UniqueIdentifier>
+      <UniqueIdentifier>{534D9132-4668-4BFC-9D39-A6BB98759A6D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Crossroad.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{2FF4B00B-C0FD-431F-AE89-EE0DBF57CC5C}</UniqueIdentifier>
+      <UniqueIdentifier>{236D46AD-36F2-490D-A888-8DC60BD8740D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Crossroad">
-      <UniqueIdentifier>{E740F10A-F224-4438-B8F5-467F09BB8DE6}</UniqueIdentifier>
+      <UniqueIdentifier>{E6340415-B201-4C23-930F-47DF76F26F60}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Crossroad\Crossroad.Build.cs">
       <Filter>Source\Crossroad</Filter>
@@ -65,5 +65,12 @@
     <ClInclude Include="..\..\Source\Crossroad\CrossroadProjectile.h">
       <Filter>Source\Crossroad</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Crossroad\MyDude.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\MyDude.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

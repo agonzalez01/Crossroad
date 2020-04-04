@@ -1,0 +1,24 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Crossroad-4220.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\CrossroadEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\Crossroad.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadCharacter.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadGameMode.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadHUD.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadProjectile.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\MyDude.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\Crossroad.init.gen.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadCharacter.gen.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadGameMode.gen.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadHUD.gen.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\CrossroadProjectile.gen.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\MyDude.gen.cpp.obj"
+"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\Default.rc2.res"
+/OUT:"C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\UE4Editor-Crossroad-4220.lib"
+/INCLUDE:IMPLEMENT_MODULE_Crossroad
