@@ -11,6 +11,8 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
+#include "AnimInstanceReplicator.h"
+#include "Engine/Engine.h"
 
 
 // Sets default values
@@ -24,6 +26,11 @@ AMyDude::AMyDude()
 	BaseTurnRate = 45.f;
 	BaseLookUpRate = 45.f;
 
+	canMove = false;
+	movingBack = false;
+	movingRight = false;
+	movingLeft = false;
+
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	CameraComponent->SetupAttachment(GetCapsuleComponent());
 	CameraComponent->SetRelativeLocation(FVector(-40.f, 1.75f, 65.f));
@@ -33,6 +40,7 @@ AMyDude::AMyDude()
 	DudeMesh->SetupAttachment(CameraComponent);
 	DudeMesh->bCastDynamicShadow = true;
 	DudeMesh->CastShadow = false;
+
 
 }
 
@@ -47,7 +55,6 @@ void AMyDude::BeginPlay()
 void AMyDude::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 // Called to bind functionality to input
@@ -99,6 +106,24 @@ void AMyDude::MoveForward(float value)
 	if (value != 0.0f)
 	{
 		AddMovementInput(GetActorForwardVector(), value);
+
+		if (value > 0.f)
+		{
+			canMove = true;
+			movingBack = false;
+		}
+
+		else if (value < 0.f)
+		{
+			canMove = false;
+			movingBack = true;
+		}
+	}
+
+	else
+	{
+		canMove = false;
+		movingBack = false;
 	}
 }
 
@@ -107,6 +132,23 @@ void AMyDude::MoveRight(float value)
 	if (value != 0.0f)
 	{
 		AddMovementInput(GetActorRightVector(), value);
+
+		if (value > 0)
+		{
+			movingLeft = false;
+			movingRight = true;
+		}
+
+		else if (value < 0)
+		{
+			movingRight = false;
+			movingLeft = true;
+		}
+	}
+
+	else
+	{
+		movingRight = movingLeft = false;
 	}
 }
 

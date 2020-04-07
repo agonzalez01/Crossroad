@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	CROSSROAD_API UClass* Z_Construct_UClass_AMyDude();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_Crossroad();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimBlueprint_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
@@ -38,6 +39,10 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AnimationHandler_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AnimationHandler;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireAnimation_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireAnimation;
@@ -49,6 +54,26 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ProjectileClass;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_movingLeft_MetaData[];
+#endif
+		static void NewProp_movingLeft_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_movingLeft;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_movingRight_MetaData[];
+#endif
+		static void NewProp_movingRight_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_movingRight;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_movingBack_MetaData[];
+#endif
+		static void NewProp_movingBack_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_movingBack;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_canMove_MetaData[];
+#endif
+		static void NewProp_canMove_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_canMove;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseLookUpRate_MetaData[];
 #endif
@@ -81,6 +106,13 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler_MetaData[] = {
+		{ "Category", "Gameplay" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler = { "AnimationHandler", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, AnimationHandler), Z_Construct_UClass_UAnimBlueprint_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_FireAnimation_MetaData[] = {
 		{ "Category", "Gameplay" },
 		{ "ModuleRelativePath", "MyDude.h" },
@@ -101,6 +133,50 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_ProjectileClass = { "ProjectileClass", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, ProjectileClass), Z_Construct_UClass_ACrossroadProjectile_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_ProjectileClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_ProjectileClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->movingLeft = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft = { "movingLeft", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->movingRight = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight = { "movingRight", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->movingBack = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack = { "movingBack", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->canMove = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_canMove = { "canMove", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_BaseLookUpRate_MetaData[] = {
 		{ "Category", "Camera" },
@@ -135,9 +211,14 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_DudeMesh = { "DudeMesh", nullptr, (EPropertyFlags)0x00400000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, DudeMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_DudeMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_DudeMesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyDude_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_FireAnimation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_FireSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_ProjectileClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_canMove,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_BaseTurnRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_CameraComponent,
@@ -170,7 +251,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMyDude, 1769317808);
+	IMPLEMENT_CLASS(AMyDude, 3282383449);
 	template<> CROSSROAD_API UClass* StaticClass<AMyDude>()
 	{
 		return AMyDude::StaticClass();

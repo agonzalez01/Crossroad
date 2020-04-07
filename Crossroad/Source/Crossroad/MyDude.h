@@ -55,6 +55,18 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera)
 		float BaseLookUpRate;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool canMove;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool movingBack;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool movingRight;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool movingLeft;
+
 	UPROPERTY(EditDefaultsOnly, Category = Projectile)
 		TSubclassOf<class ACrossroadProjectile> ProjectileClass;
 
@@ -63,5 +75,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 		class UAnimMontage* FireAnimation;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		class UAnimBlueprint* AnimationHandler;
 
 };
