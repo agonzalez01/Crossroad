@@ -17,6 +17,9 @@ class CROSSROAD_API AMyDude : public ACharacter
 		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		class UCameraComponent* CameraComponent;
 
+		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+			class USpringArmComponent* CameraArm;
+
 
 
 

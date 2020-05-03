@@ -60,7 +60,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMyDude); \
 
 #define Crossroad_Source_Crossroad_MyDude_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__DudeMesh() { return STRUCT_OFFSET(AMyDude, DudeMesh); } \
-	FORCEINLINE static uint32 __PPO__CameraComponent() { return STRUCT_OFFSET(AMyDude, CameraComponent); }
+	FORCEINLINE static uint32 __PPO__CameraComponent() { return STRUCT_OFFSET(AMyDude, CameraComponent); } \
+	FORCEINLINE static uint32 __PPO__CameraArm() { return STRUCT_OFFSET(AMyDude, CameraArm); }
 
 
 #define Crossroad_Source_Crossroad_MyDude_h_9_PROLOG

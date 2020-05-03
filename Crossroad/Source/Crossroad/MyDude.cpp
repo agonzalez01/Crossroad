@@ -5,6 +5,7 @@
 #include "CrossroadProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
@@ -31,15 +32,21 @@ AMyDude::AMyDude()
 	movingRight = false;
 	movingLeft = false;
 
+	CameraArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	CameraArm->SetupAttachment(GetCapsuleComponent());
+	CameraArm->TargetArmLength = 500.f;
+
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-	CameraComponent->SetupAttachment(GetCapsuleComponent());
-	CameraComponent->SetRelativeLocation(FVector(-40.f, 1.75f, 65.f));
+	CameraComponent->SetupAttachment(CameraArm);
+	//CameraComponent->SetRelativeLocation(FVector(-40.f, 1.75f, 65.f));
 	CameraComponent->bUsePawnControlRotation = true;
 
-	DudeMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Dude Mesh"));
+	/*DudeMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Dude Mesh"));
 	DudeMesh->SetupAttachment(CameraComponent);
 	DudeMesh->bCastDynamicShadow = true;
-	DudeMesh->CastShadow = false;
+	DudeMesh->CastShadow = false;*/
+
+	//SetRootComponent(CameraComponent);
 
 
 }
