@@ -14,6 +14,7 @@
 #include "MotionControllerComponent.h"
 #include "AnimInstanceReplicator.h"
 #include "Engine/Engine.h"
+#include "Math/Rotator.h"
 
 
 // Sets default values
@@ -31,6 +32,9 @@ AMyDude::AMyDude()
 	movingBack = false;
 	movingRight = false;
 	movingLeft = false;
+	isMoving = false;
+
+	
 
 	CameraArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	CameraArm->SetupAttachment(GetCapsuleComponent());
@@ -46,6 +50,7 @@ AMyDude::AMyDude()
 	DudeMesh->bCastDynamicShadow = true;
 	DudeMesh->CastShadow = false;*/
 
+	RotateBro = CameraArm->GetComponentRotation();
 	//SetRootComponent(CameraComponent);
 
 
@@ -62,6 +67,17 @@ void AMyDude::BeginPlay()
 void AMyDude::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	RotateBro =  FRotator(0, CameraComponent->GetComponentRotation().Yaw, CameraComponent->GetComponentRotation().Roll);
+	if (canMove||movingBack||movingLeft||movingRight)
+	{
+		FQuat ArmRotation = FQuat(RotateBro);
+		SetActorRotation(ArmRotation, ETeleportType::None);
+	}
+	/*FVector ArmForward = CameraArm->GetForwardVector();
+	FRotator ArmRotator = CameraArm->GetComponentRotation();
+	FQuat ArmRotation = FQuat(RotateBro);*/
+	/*GetCapsuleComponent()->SetWorldRotation(ArmRotation, false, 0, ETeleportType::None);
+	SetActorRotation(ArmRotation, ETeleportType::None);*/
 }
 
 // Called to bind functionality to input
@@ -110,12 +126,17 @@ void AMyDude::OnFire()
 
 void AMyDude::MoveForward(float value)
 {
+
 	if (value != 0.0f)
 	{
 		AddMovementInput(GetActorForwardVector(), value);
+		//GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, TEXT("Setting rotation"));
 
 		if (value > 0.f)
 		{
+			//FQuat ArmRotation = FQuat(RotateBro);
+			//GetCapsuleComponent()->SetWorldRotation(ArmRotation, false, 0, ETeleportType::None);
+			//SetActorRotation(ArmRotation, ETeleportType::None);
 			canMove = true;
 			movingBack = false;
 		}
@@ -124,6 +145,7 @@ void AMyDude::MoveForward(float value)
 		{
 			canMove = false;
 			movingBack = true;
+
 		}
 	}
 
