@@ -37,6 +37,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
 		bool inAir;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+		bool isAiming;
+
 
 
 

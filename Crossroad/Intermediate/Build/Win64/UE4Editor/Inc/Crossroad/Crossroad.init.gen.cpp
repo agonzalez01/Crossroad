@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeCrossroad_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x35D5DB15,
-				0x3602028C,
+				0xDF8F2F5C,
+				0x44E2ED69,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

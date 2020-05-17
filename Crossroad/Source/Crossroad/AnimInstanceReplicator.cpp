@@ -16,6 +16,7 @@ UAnimInstanceReplicator::UAnimInstanceReplicator()
 	movetoRight = false;
 	moveLeft = false;
 	inAir = false;
+	isAiming = false;
 
 }
 
@@ -61,6 +62,8 @@ void UAnimInstanceReplicator::NativeUpdateAnimation(float DeltaSeconds)
 
 	if (Belica != NULL)
 	{
+		isAiming = Belica->isAiming;
+
 		inAir = Belica->GetCharacterMovement()->IsFalling();
 
 		if (Belica->GetVelocity().Size() == 0)
