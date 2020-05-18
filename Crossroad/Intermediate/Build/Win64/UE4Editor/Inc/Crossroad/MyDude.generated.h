@@ -15,6 +15,79 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define Crossroad_Source_Crossroad_MyDude_h_15_SPARSE_DATA
 #define Crossroad_Source_Crossroad_MyDude_h_15_RPC_WRAPPERS \
+	virtual void SetAllVariables_Implementation(); \
+ \
+	DECLARE_FUNCTION(execOnRep_isShooting) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_isShooting(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_isAiming) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_isAiming(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_movingRight) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_movingRight(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_movingLeft) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_movingLeft(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_movingBack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_movingBack(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_canMove) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_canMove(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_isMoving) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_isMoving(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execJustSetThem) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->JustSetThem(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execSetAllVariables) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->SetAllVariables_Implementation(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execTImelineProgress) \
 	{ \
@@ -27,6 +100,79 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define Crossroad_Source_Crossroad_MyDude_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void SetAllVariables_Implementation(); \
+ \
+	DECLARE_FUNCTION(execOnRep_isShooting) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_isShooting(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_isAiming) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_isAiming(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_movingRight) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_movingRight(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_movingLeft) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_movingLeft(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_movingBack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_movingBack(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_canMove) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_canMove(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_isMoving) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_isMoving(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execJustSetThem) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->JustSetThem(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execSetAllVariables) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->SetAllVariables_Implementation(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execTImelineProgress) \
 	{ \
@@ -38,6 +184,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
+#define Crossroad_Source_Crossroad_MyDude_h_15_EVENT_PARMS
+#define Crossroad_Source_Crossroad_MyDude_h_15_CALLBACK_WRAPPERS
 #define Crossroad_Source_Crossroad_MyDude_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyDude(); \
@@ -88,13 +236,17 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMyDude); \
 	FORCEINLINE static uint32 __PPO__CameraTimeline() { return STRUCT_OFFSET(AMyDude, CameraTimeline); }
 
 
-#define Crossroad_Source_Crossroad_MyDude_h_12_PROLOG
+#define Crossroad_Source_Crossroad_MyDude_h_12_PROLOG \
+	Crossroad_Source_Crossroad_MyDude_h_15_EVENT_PARMS
+
+
 #define Crossroad_Source_Crossroad_MyDude_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Crossroad_Source_Crossroad_MyDude_h_15_PRIVATE_PROPERTY_OFFSET \
 	Crossroad_Source_Crossroad_MyDude_h_15_SPARSE_DATA \
 	Crossroad_Source_Crossroad_MyDude_h_15_RPC_WRAPPERS \
+	Crossroad_Source_Crossroad_MyDude_h_15_CALLBACK_WRAPPERS \
 	Crossroad_Source_Crossroad_MyDude_h_15_INCLASS \
 	Crossroad_Source_Crossroad_MyDude_h_15_STANDARD_CONSTRUCTORS \
 public: \
@@ -107,6 +259,7 @@ public: \
 	Crossroad_Source_Crossroad_MyDude_h_15_PRIVATE_PROPERTY_OFFSET \
 	Crossroad_Source_Crossroad_MyDude_h_15_SPARSE_DATA \
 	Crossroad_Source_Crossroad_MyDude_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	Crossroad_Source_Crossroad_MyDude_h_15_CALLBACK_WRAPPERS \
 	Crossroad_Source_Crossroad_MyDude_h_15_INCLASS_NO_PURE_DECLS \
 	Crossroad_Source_Crossroad_MyDude_h_15_ENHANCED_CONSTRUCTORS \
 private: \

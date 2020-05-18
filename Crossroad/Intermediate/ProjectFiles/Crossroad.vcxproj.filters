@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Crossroad.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{7AB0DD7D-E6C7-42D1-B1E6-2D941BD686F8}</UniqueIdentifier>
+      <UniqueIdentifier>{8FC3E3B1-C25E-4C02-862A-7779C9965094}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Crossroad.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,9 @@
     <None Include="..\..\Source\CrossroadEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{ECA7B6DB-F59E-43EF-8562-37B6E6BC8852}</UniqueIdentifier>
+      <UniqueIdentifier>{17F64F2E-026C-4C7B-A37E-D04CF538DA47}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Crossroad">
-      <UniqueIdentifier>{9627358C-4ED4-4936-8059-C12CDB617BA5}</UniqueIdentifier>
+      <UniqueIdentifier>{CE365E3D-F18C-454F-A963-335349207F3F}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Crossroad\AnimInstanceReplicator.cpp">
       <Filter>Source\Crossroad</Filter>
@@ -75,6 +76,18 @@
       <Filter>Source\Crossroad</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Crossroad\MyDude.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Crossroad\ReplayGameInstance.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\ReplayGameInstance.h">
+      <Filter>Source\Crossroad</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Crossroad\ReplayPlayerController.cpp">
+      <Filter>Source\Crossroad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Crossroad\ReplayPlayerController.h">
       <Filter>Source\Crossroad</Filter>
     </ClInclude>
   </ItemGroup>

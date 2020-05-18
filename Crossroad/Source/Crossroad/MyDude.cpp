@@ -4,6 +4,7 @@
 #include "MyDude.h"
 #include "CrossroadProjectile.h"
 #include "Animation/AnimInstance.h"
+#include "Animation/AnimMontage.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -18,6 +19,7 @@
 #include "Math/UnrealMathUtility.h"
 #include "Components/TimelineComponent.h"
 #include "TimerManager.h"
+#include "Net/UnrealNetwork.h"
 
 
 // Sets default values
@@ -25,6 +27,9 @@ AMyDude::AMyDude()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	SetReplicates(true);
+	bReplicates = true;
 
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
 
@@ -77,6 +82,65 @@ void AMyDude::TImelineProgress(float value)
 	CameraComponent->SetFieldOfView(FMath::Lerp(InitialFOV, FinalFOV, value));
 }
 
+void AMyDude::JustSetThem()
+{
+	canMove = canMove;
+	movingBack = movingBack;
+	movingRight = movingRight;
+	movingLeft = movingLeft;
+	isMoving = isMoving;
+	isAiming = isAiming;
+	isShooting = isShooting;
+	isADS = isADS;
+}
+
+void AMyDude::OnRep_isMoving()
+{
+	isMoving = isMoving;
+}
+
+void AMyDude::OnRep_canMove()
+{
+	canMove = canMove;
+}
+
+void AMyDude::OnRep_movingBack()
+{
+	movingBack = movingBack;
+}
+
+void AMyDude::OnRep_movingLeft()
+{
+	movingLeft = movingLeft;
+}
+
+void AMyDude::OnRep_movingRight()
+{
+	movingRight = movingRight;
+}
+
+void AMyDude::OnRep_isAiming()
+{
+	isAiming = isAiming;
+}
+
+void AMyDude::OnRep_isShooting()
+{
+	isShooting = isShooting;
+}
+
+void AMyDude::SetAllVariables_Implementation()
+{
+	canMove = true;
+	movingBack = movingBack;
+	movingRight = movingRight;
+	movingLeft = movingLeft;
+	isMoving = isMoving;
+	isAiming = isAiming;
+	isShooting = isShooting;
+	isADS = isADS;
+}
+
 // Called when the game starts or when spawned
 void AMyDude::BeginPlay()
 {
@@ -87,7 +151,22 @@ void AMyDude::BeginPlay()
 		CameraTimeline->SetLooping(false);
 	}
 
+
+
 	
+}
+
+void AMyDude::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(AMyDude, isMoving);
+	DOREPLIFETIME(AMyDude, canMove);
+	DOREPLIFETIME(AMyDude, movingLeft);
+	DOREPLIFETIME(AMyDude, movingRight);
+	DOREPLIFETIME(AMyDude, movingBack);
+	DOREPLIFETIME(AMyDude, isAiming);
+	DOREPLIFETIME(AMyDude, isShooting);
 }
 
 // Called every frame
@@ -100,6 +179,8 @@ void AMyDude::Tick(float DeltaTime)
 		FQuat ArmRotation = FQuat(RotateBro);
 		SetActorRotation(ArmRotation, ETeleportType::None);
 	}
+
+	SetAllVariables();
 
 	/*FVector ArmForward = CameraArm->GetForwardVector();
 	FRotator ArmRotator = CameraArm->GetComponentRotation();
@@ -206,12 +287,13 @@ void AMyDude::FireShot()
 	// try and play a firing animation if specified
 	if (FireAnimation != NULL)
 	{
-		// Get the animation object for the arms mesh
+		PlayAnimMontage(FireAnimation, 1.f);
+		/* Get the animation object for the arms mesh
 		UAnimInstance* AnimInstance =GetMesh()->GetAnimInstance();
 		if (AnimInstance != NULL)
 		{
 			AnimInstance->Montage_Play(FireAnimation, 1.f);
-		}
+		} */
 	}
 }
 

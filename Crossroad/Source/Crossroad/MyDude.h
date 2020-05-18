@@ -40,6 +40,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
 	void OnFire();
 
 	void StartFire();
@@ -70,8 +72,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
+	//Called to bind functionality to input
 	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
 
 	UFUNCTION()
 	void TImelineProgress(float value);
@@ -96,25 +99,25 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera)
 		float BaseLookUpRate;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, ReplicatedUsing = OnRep_isMoving)
 		bool isMoving;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, ReplicatedUsing = OnRep_canMove)
 		bool canMove;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, Replicated)
 		bool movingBack;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, Replicated)
 		bool movingRight;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, Replicated)
 		bool movingLeft;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, ReplicatedUsing = OnRep_isAiming)
 		bool isAiming;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, ReplicatedUsing = OnRep_isShooting)
 		bool isShooting;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
@@ -138,21 +141,43 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 		float FireRate;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay, Replicated)
 		class UParticleSystem* MuzzleParticle;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay, Replicated)
 		class UParticleSystem* ImpactParticles;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay, Replicated)
 		class UAnimBlueprint* AnimationHandler;
 
-	/*USTRUCT(BlueprintType)
-		struct FAttachmentTransformRules
-	{
-		EAttachmentRule InRule;
-		bool bInWeldSimulatedBodies;
-	};*/
+	UFUNCTION(Server, Reliable)
+		void SetAllVariables();
+
+	UFUNCTION()
+		void JustSetThem();
+
+	UFUNCTION()
+		void OnRep_isMoving();
+
+	UFUNCTION()
+		void OnRep_canMove();
+
+	UFUNCTION()
+		void OnRep_movingBack();
+
+	UFUNCTION()
+		void OnRep_movingLeft();
+
+	UFUNCTION()
+		void OnRep_movingRight();
+
+	UFUNCTION()
+		void OnRep_isAiming();
+
+	UFUNCTION()
+		void OnRep_isShooting();
+
+	
 		
 	
 

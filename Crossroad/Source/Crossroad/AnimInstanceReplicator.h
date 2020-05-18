@@ -19,31 +19,34 @@ public:
 
 	AMyDude * Belica;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools, Replicated)
 		bool isMoving;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools, Replicated)
 		bool moveForward;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools, Replicated)
 		bool moveBackwards;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools, Replicated)
 		bool moveLeft;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools, Replicated)
 		bool movetoRight;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools, Replicated)
 		bool inAir;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bools, Replicated)
 		bool isAiming;
 
 
 
 
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutlifetimeProps) const override;
+
+	
 
 
 };

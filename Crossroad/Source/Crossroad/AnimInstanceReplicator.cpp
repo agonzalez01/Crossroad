@@ -7,6 +7,7 @@
 #include "Engine/Engine.h"
 #include "MyDude.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Net/UnrealNetwork.h"
 
 UAnimInstanceReplicator::UAnimInstanceReplicator()
 {
@@ -17,6 +18,7 @@ UAnimInstanceReplicator::UAnimInstanceReplicator()
 	moveLeft = false;
 	inAir = false;
 	isAiming = false;
+
 
 }
 
@@ -120,4 +122,8 @@ void UAnimInstanceReplicator::NativeUpdateAnimation(float DeltaSeconds)
 		}
 
 	}
+}
+
+void UAnimInstanceReplicator::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutlifetimeProps) const
+{
 }

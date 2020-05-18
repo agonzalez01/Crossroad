@@ -17,6 +17,15 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	CROSSROAD_API UClass* Z_Construct_UClass_AMyDude();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_Crossroad();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_JustSetThem();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_canMove();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_isAiming();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_isMoving();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_isShooting();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingBack();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingLeft();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingRight();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_SetAllVariables();
 	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_TImelineProgress();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimBlueprint_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
@@ -33,13 +42,225 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 // End Cross Module References
+	static FName NAME_AMyDude_SetAllVariables = FName(TEXT("SetAllVariables"));
+	void AMyDude::SetAllVariables()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AMyDude_SetAllVariables),NULL);
+	}
 	void AMyDude::StaticRegisterNativesAMyDude()
 	{
 		UClass* Class = AMyDude::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "JustSetThem", &AMyDude::execJustSetThem },
+			{ "OnRep_canMove", &AMyDude::execOnRep_canMove },
+			{ "OnRep_isAiming", &AMyDude::execOnRep_isAiming },
+			{ "OnRep_isMoving", &AMyDude::execOnRep_isMoving },
+			{ "OnRep_isShooting", &AMyDude::execOnRep_isShooting },
+			{ "OnRep_movingBack", &AMyDude::execOnRep_movingBack },
+			{ "OnRep_movingLeft", &AMyDude::execOnRep_movingLeft },
+			{ "OnRep_movingRight", &AMyDude::execOnRep_movingRight },
+			{ "SetAllVariables", &AMyDude::execSetAllVariables },
 			{ "TImelineProgress", &AMyDude::execTImelineProgress },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AMyDude_JustSetThem_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_JustSetThem_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_JustSetThem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "JustSetThem", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_JustSetThem_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_JustSetThem_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_JustSetThem()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_JustSetThem_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_OnRep_canMove_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_OnRep_canMove_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_OnRep_canMove_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "OnRep_canMove", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_OnRep_canMove_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_OnRep_canMove_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_OnRep_canMove()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_OnRep_canMove_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_OnRep_isAiming_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_OnRep_isAiming_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_OnRep_isAiming_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "OnRep_isAiming", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_OnRep_isAiming_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_OnRep_isAiming_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_OnRep_isAiming()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_OnRep_isAiming_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_OnRep_isMoving_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_OnRep_isMoving_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_OnRep_isMoving_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "OnRep_isMoving", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_OnRep_isMoving_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_OnRep_isMoving_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_OnRep_isMoving()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_OnRep_isMoving_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_OnRep_isShooting_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_OnRep_isShooting_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_OnRep_isShooting_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "OnRep_isShooting", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_OnRep_isShooting_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_OnRep_isShooting_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_OnRep_isShooting()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_OnRep_isShooting_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_OnRep_movingBack_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_OnRep_movingBack_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_OnRep_movingBack_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "OnRep_movingBack", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_OnRep_movingBack_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_OnRep_movingBack_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingBack()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_OnRep_movingBack_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_OnRep_movingLeft_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_OnRep_movingLeft_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_OnRep_movingLeft_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "OnRep_movingLeft", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_OnRep_movingLeft_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_OnRep_movingLeft_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingLeft()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_OnRep_movingLeft_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_OnRep_movingRight_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_OnRep_movingRight_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_OnRep_movingRight_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "OnRep_movingRight", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_OnRep_movingRight_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_OnRep_movingRight_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingRight()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_OnRep_movingRight_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyDude_SetAllVariables_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_SetAllVariables_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_SetAllVariables_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "SetAllVariables", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00220CC0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_SetAllVariables_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_SetAllVariables_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_SetAllVariables()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_SetAllVariables_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AMyDude_TImelineProgress_Statics
 	{
@@ -60,7 +281,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_TImelineProgress_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "// Called to bind functionality to input\n//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;\n" },
+		{ "Comment", "//Called to bind functionality to input\n//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;\n" },
 		{ "ModuleRelativePath", "MyDude.h" },
 		{ "ToolTip", "Called to bind functionality to input\nvirtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;" },
 	};
@@ -215,7 +436,16 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Crossroad,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyDude_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMyDude_TImelineProgress, "TImelineProgress" }, // 2646790029
+		{ &Z_Construct_UFunction_AMyDude_JustSetThem, "JustSetThem" }, // 705870107
+		{ &Z_Construct_UFunction_AMyDude_OnRep_canMove, "OnRep_canMove" }, // 2076910149
+		{ &Z_Construct_UFunction_AMyDude_OnRep_isAiming, "OnRep_isAiming" }, // 1127466484
+		{ &Z_Construct_UFunction_AMyDude_OnRep_isMoving, "OnRep_isMoving" }, // 1964499099
+		{ &Z_Construct_UFunction_AMyDude_OnRep_isShooting, "OnRep_isShooting" }, // 1307880117
+		{ &Z_Construct_UFunction_AMyDude_OnRep_movingBack, "OnRep_movingBack" }, // 2382087787
+		{ &Z_Construct_UFunction_AMyDude_OnRep_movingLeft, "OnRep_movingLeft" }, // 1507526461
+		{ &Z_Construct_UFunction_AMyDude_OnRep_movingRight, "OnRep_movingRight" }, // 2421849301
+		{ &Z_Construct_UFunction_AMyDude_SetAllVariables, "SetAllVariables" }, // 3389150455
+		{ &Z_Construct_UFunction_AMyDude_TImelineProgress, "TImelineProgress" }, // 2374670512
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::Class_MetaDataParams[] = {
@@ -230,21 +460,21 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		{ "ModuleRelativePath", "MyDude.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler = { "AnimationHandler", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, AnimationHandler), Z_Construct_UClass_UAnimBlueprint_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler = { "AnimationHandler", nullptr, (EPropertyFlags)0x0010000000000025, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, AnimationHandler), Z_Construct_UClass_UAnimBlueprint_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_AnimationHandler_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_ImpactParticles_MetaData[] = {
 		{ "Category", "Gameplay" },
 		{ "ModuleRelativePath", "MyDude.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_ImpactParticles = { "ImpactParticles", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, ImpactParticles), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_ImpactParticles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_ImpactParticles_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_ImpactParticles = { "ImpactParticles", nullptr, (EPropertyFlags)0x0010000000000025, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, ImpactParticles), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_ImpactParticles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_ImpactParticles_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_MuzzleParticle_MetaData[] = {
 		{ "Category", "Gameplay" },
 		{ "ModuleRelativePath", "MyDude.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_MuzzleParticle = { "MuzzleParticle", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, MuzzleParticle), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_MuzzleParticle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_MuzzleParticle_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_MuzzleParticle = { "MuzzleParticle", nullptr, (EPropertyFlags)0x0010000000000025, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, MuzzleParticle), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_MuzzleParticle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_MuzzleParticle_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_FireRate_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -308,7 +538,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	{
 		((AMyDude*)Obj)->isShooting = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting = { "isShooting", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting = { "isShooting", "OnRep_isShooting", (EPropertyFlags)0x0010000100020025, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming_MetaData[] = {
 		{ "Category", "Movement" },
@@ -319,7 +549,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	{
 		((AMyDude*)Obj)->isAiming = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming = { "isAiming", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming = { "isAiming", "OnRep_isAiming", (EPropertyFlags)0x0010000100020025, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData[] = {
 		{ "Category", "Movement" },
@@ -330,7 +560,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	{
 		((AMyDude*)Obj)->movingLeft = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft = { "movingLeft", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft = { "movingLeft", nullptr, (EPropertyFlags)0x0010000000020025, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingLeft_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData[] = {
 		{ "Category", "Movement" },
@@ -341,7 +571,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	{
 		((AMyDude*)Obj)->movingRight = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight = { "movingRight", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight = { "movingRight", nullptr, (EPropertyFlags)0x0010000000020025, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingRight_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData[] = {
 		{ "Category", "Movement" },
@@ -352,7 +582,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	{
 		((AMyDude*)Obj)->movingBack = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack = { "movingBack", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack = { "movingBack", nullptr, (EPropertyFlags)0x0010000000020025, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_movingBack_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData[] = {
 		{ "Category", "Movement" },
@@ -363,7 +593,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	{
 		((AMyDude*)Obj)->canMove = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_canMove = { "canMove", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_canMove = { "canMove", "OnRep_canMove", (EPropertyFlags)0x0010000100020025, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_canMove_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving_MetaData[] = {
 		{ "Category", "Movement" },
@@ -374,7 +604,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	{
 		((AMyDude*)Obj)->isMoving = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving = { "isMoving", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving = { "isMoving", "OnRep_isMoving", (EPropertyFlags)0x0010000100020025, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_BaseLookUpRate_MetaData[] = {
 		{ "Category", "Camera" },
@@ -517,7 +747,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMyDude, 607542885);
+	IMPLEMENT_CLASS(AMyDude, 2590777559);
 	template<> CROSSROAD_API UClass* StaticClass<AMyDude>()
 	{
 		return AMyDude::StaticClass();
