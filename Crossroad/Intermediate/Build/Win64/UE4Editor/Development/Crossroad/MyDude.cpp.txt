@@ -1,14 +1,14 @@
-C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\Definitions.Crossroad.h
-C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Source\Crossroad\MyDude.h
+C:\Users\piped\OneDrive\Documents\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Development\Crossroad\Definitions.Crossroad.h
+C:\Users\piped\OneDrive\Documents\Crossroad\Crossroad\Source\Crossroad\MyDude.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Components/TimelineComponent.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TimelineComponent.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
-C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Inc\Crossroad\MyDude.generated.h
-C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Source\Crossroad\CrossroadProjectile.h
-C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Inc\Crossroad\CrossroadProjectile.generated.h
+C:\Users\piped\OneDrive\Documents\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Inc\Crossroad\MyDude.generated.h
+C:\Users\piped\OneDrive\Documents\Crossroad\Crossroad\Source\Crossroad\CrossroadProjectile.h
+C:\Users\piped\OneDrive\Documents\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Inc\Crossroad\CrossroadProjectile.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\Camera/CameraComponent.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CameraComponent.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
@@ -44,6 +44,6 @@ C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Public\SceneVie
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\HeadMountedDisplay\Public\IMotionController.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\HeadMountedDisplay\Public\LateUpdateManager.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\MotionControllerComponent.generated.h
-C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Source\Crossroad\AnimInstanceReplicator.h
-C:\Users\piped\OneDrive\Documents\Unreal Projects\Crossroad\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Inc\Crossroad\AnimInstanceReplicator.generated.h
+C:\Users\piped\OneDrive\Documents\Crossroad\Crossroad\Source\Crossroad\AnimInstanceReplicator.h
+C:\Users\piped\OneDrive\Documents\Crossroad\Crossroad\Intermediate\Build\Win64\UE4Editor\Inc\Crossroad\AnimInstanceReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\Engine\Public\Net/UnrealNetwork.h

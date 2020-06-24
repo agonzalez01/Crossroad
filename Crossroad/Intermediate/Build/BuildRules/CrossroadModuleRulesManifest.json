@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\piped\\OneDrive\\Documents\\Unreal Projects\\Crossroad\\Crossroad\\Crossroad\\Source\\Crossroad\\Crossroad.Build.cs",
-		"C:\\Users\\piped\\OneDrive\\Documents\\Unreal Projects\\Crossroad\\Crossroad\\Crossroad\\Source\\Crossroad.Target.cs",
-		"C:\\Users\\piped\\OneDrive\\Documents\\Unreal Projects\\Crossroad\\Crossroad\\Crossroad\\Source\\CrossroadEditor.Target.cs"
+		"C:\\Users\\piped\\OneDrive\\Documents\\Crossroad\\Crossroad\\Source\\Crossroad\\Crossroad.Build.cs",
+		"C:\\Users\\piped\\OneDrive\\Documents\\Crossroad\\Crossroad\\Source\\Crossroad.Target.cs",
+		"C:\\Users\\piped\\OneDrive\\Documents\\Crossroad\\Crossroad\\Source\\CrossroadEditor.Target.cs"
 	],
 	"EngineVersion": "4.24.3"
 }

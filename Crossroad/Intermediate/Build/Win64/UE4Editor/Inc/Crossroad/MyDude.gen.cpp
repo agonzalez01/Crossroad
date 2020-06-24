@@ -25,6 +25,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingBack();
 	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingLeft();
 	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_OnRep_movingRight();
+	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_RecoilTimelineProgress();
 	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_SetAllVariables();
 	CROSSROAD_API UFunction* Z_Construct_UFunction_AMyDude_TImelineProgress();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimBlueprint_NoRegister();
@@ -59,6 +60,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 			{ "OnRep_movingBack", &AMyDude::execOnRep_movingBack },
 			{ "OnRep_movingLeft", &AMyDude::execOnRep_movingLeft },
 			{ "OnRep_movingRight", &AMyDude::execOnRep_movingRight },
+			{ "RecoilTimelineProgress", &AMyDude::execRecoilTimelineProgress },
 			{ "SetAllVariables", &AMyDude::execSetAllVariables },
 			{ "TImelineProgress", &AMyDude::execTImelineProgress },
 		};
@@ -240,6 +242,38 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics
+	{
+		struct MyDude_eventRecoilTimelineProgress_Parms
+		{
+			float value;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_value;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::NewProp_value = { "value", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MyDude_eventRecoilTimelineProgress_Parms, value), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::NewProp_value,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyDude, nullptr, "RecoilTimelineProgress", nullptr, nullptr, sizeof(MyDude_eventRecoilTimelineProgress_Parms), Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyDude_RecoilTimelineProgress()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyDude_RecoilTimelineProgress_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AMyDude_SetAllVariables_Statics
 	{
 #if WITH_METADATA
@@ -344,6 +378,34 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_RotateBro;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilSidewaysCount_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_RecoilSidewaysCount;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilUpCount_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_RecoilUpCount;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SideRecoil_MetaData[];
+#endif
+		static void NewProp_SideRecoil_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_SideRecoil;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_isRightRecoil_MetaData[];
+#endif
+		static void NewProp_isRightRecoil_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_isRightRecoil;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_isLeftRecoil_MetaData[];
+#endif
+		static void NewProp_isLeftRecoil_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_isLeftRecoil;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_isRecoil_MetaData[];
+#endif
+		static void NewProp_isRecoil_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_isRecoil;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_isADS_MetaData[];
 #endif
 		static void NewProp_isADS_SetBit(void* Obj);
@@ -392,6 +454,30 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseTurnRate;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilSideways_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_RecoilSideways;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilUp_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_RecoilUp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilSidewaysCurveFloat_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_RecoilSidewaysCurveFloat;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilSidewaysCurveTimeline_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_RecoilSidewaysCurveTimeline;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilCurveFloat_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_RecoilCurveFloat;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilCurveTimeline_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_RecoilCurveTimeline;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FinalFOV_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_FinalFOV;
@@ -407,6 +493,14 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurveTimeline_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CurveTimeline;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SidewaysTimeline_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SidewaysTimeline;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RecoilTimeline_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_RecoilTimeline;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CameraTimeline_MetaData[];
 #endif
@@ -444,6 +538,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		{ &Z_Construct_UFunction_AMyDude_OnRep_movingBack, "OnRep_movingBack" }, // 2382087787
 		{ &Z_Construct_UFunction_AMyDude_OnRep_movingLeft, "OnRep_movingLeft" }, // 1507526461
 		{ &Z_Construct_UFunction_AMyDude_OnRep_movingRight, "OnRep_movingRight" }, // 2421849301
+		{ &Z_Construct_UFunction_AMyDude_RecoilTimelineProgress, "RecoilTimelineProgress" }, // 2387806326
 		{ &Z_Construct_UFunction_AMyDude_SetAllVariables, "SetAllVariables" }, // 3389150455
 		{ &Z_Construct_UFunction_AMyDude_TImelineProgress, "TImelineProgress" }, // 2374670512
 	};
@@ -517,6 +612,64 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RotateBro = { "RotateBro", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RotateBro), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RotateBro_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RotateBro_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCount_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCount = { "RecoilSidewaysCount", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilSidewaysCount), METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCount_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUpCount_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUpCount = { "RecoilUpCount", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilUpCount), METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUpCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUpCount_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_SideRecoil_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_SideRecoil_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->SideRecoil = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_SideRecoil = { "SideRecoil", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_SideRecoil_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_SideRecoil_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_SideRecoil_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_isRightRecoil_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_isRightRecoil_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->isRightRecoil = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isRightRecoil = { "isRightRecoil", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isRightRecoil_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isRightRecoil_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isRightRecoil_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_isLeftRecoil_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_isLeftRecoil_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->isLeftRecoil = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isLeftRecoil = { "isLeftRecoil", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isLeftRecoil_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isLeftRecoil_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isLeftRecoil_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_isRecoil_MetaData[] = {
+		{ "Category", "Movement" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMyDude_Statics::NewProp_isRecoil_SetBit(void* Obj)
+	{
+		((AMyDude*)Obj)->isRecoil = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_isRecoil = { "isRecoil", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMyDude), &Z_Construct_UClass_AMyDude_Statics::NewProp_isRecoil_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_isRecoil_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_isRecoil_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_isADS_MetaData[] = {
 		{ "Category", "Movement" },
@@ -620,6 +773,48 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_BaseTurnRate = { "BaseTurnRate", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, BaseTurnRate), METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_BaseTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_BaseTurnRate_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSideways_MetaData[] = {
+		{ "Category", "RecoilTimeline" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSideways = { "RecoilSideways", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilSideways), METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSideways_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSideways_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUp_MetaData[] = {
+		{ "Category", "RecoilTimeline" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUp = { "RecoilUp", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilUp), METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUp_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveFloat_MetaData[] = {
+		{ "Category", "RecoilTimeline" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveFloat = { "RecoilSidewaysCurveFloat", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilSidewaysCurveFloat), Z_Construct_UClass_UCurveFloat_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveFloat_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveFloat_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveTimeline_MetaData[] = {
+		{ "Comment", "/*UFUNCTION()\n\x09void RecoilSidewaysTimelineProgress(float value);*/" },
+		{ "ModuleRelativePath", "MyDude.h" },
+		{ "ToolTip", "UFUNCTION()\n       void RecoilSidewaysTimelineProgress(float value);" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveTimeline = { "RecoilSidewaysCurveTimeline", nullptr, (EPropertyFlags)0x0010008000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilSidewaysCurveTimeline), Z_Construct_UScriptStruct_FTimeline, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveTimeline_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveTimeline_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveFloat_MetaData[] = {
+		{ "Category", "RecoilTimeline" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveFloat = { "RecoilCurveFloat", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilCurveFloat), Z_Construct_UClass_UCurveFloat_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveFloat_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveFloat_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveTimeline_MetaData[] = {
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveTimeline = { "RecoilCurveTimeline", nullptr, (EPropertyFlags)0x0010008000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilCurveTimeline), Z_Construct_UScriptStruct_FTimeline, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveTimeline_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveTimeline_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_FinalFOV_MetaData[] = {
 		{ "Category", "Timeline" },
 		{ "ModuleRelativePath", "MyDude.h" },
@@ -646,6 +841,24 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_CurveTimeline = { "CurveTimeline", nullptr, (EPropertyFlags)0x0010008000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, CurveTimeline), Z_Construct_UScriptStruct_FTimeline, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_CurveTimeline_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_CurveTimeline_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_SidewaysTimeline_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "RecoilSide" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_SidewaysTimeline = { "SidewaysTimeline", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, SidewaysTimeline), Z_Construct_UClass_UTimelineComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_SidewaysTimeline_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_SidewaysTimeline_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilTimeline_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Recoil" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MyDude.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilTimeline = { "RecoilTimeline", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyDude, RecoilTimeline), Z_Construct_UClass_UTimelineComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilTimeline_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilTimeline_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyDude_Statics::NewProp_CameraTimeline_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -700,6 +913,12 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_ProjectileClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_CameraFOV,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RotateBro,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCount,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUpCount,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_SideRecoil,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_isRightRecoil,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_isLeftRecoil,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_isRecoil,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_isADS,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_isShooting,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_isAiming,
@@ -710,10 +929,18 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_isMoving,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_BaseTurnRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSideways,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilUp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveFloat,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilSidewaysCurveTimeline,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveFloat,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilCurveTimeline,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_FinalFOV,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_InitialFOV,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_CurveFloat,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_CurveTimeline,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_SidewaysTimeline,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_RecoilTimeline,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_CameraTimeline,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_SocketLocation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyDude_Statics::NewProp_CameraArm,
@@ -747,7 +974,7 @@ void EmptyLinkFunctionForGeneratedCodeMyDude() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMyDude, 2590777559);
+	IMPLEMENT_CLASS(AMyDude, 3249685075);
 	template<> CROSSROAD_API UClass* StaticClass<AMyDude>()
 	{
 		return AMyDude::StaticClass();

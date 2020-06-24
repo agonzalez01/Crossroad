@@ -89,6 +89,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 		P_NATIVE_END; \
 	} \
  \
+	DECLARE_FUNCTION(execRecoilTimelineProgress) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->RecoilTimelineProgress(Z_Param_value); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execTImelineProgress) \
 	{ \
 		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
@@ -174,6 +183,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 		P_NATIVE_END; \
 	} \
  \
+	DECLARE_FUNCTION(execRecoilTimelineProgress) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->RecoilTimelineProgress(Z_Param_value); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execTImelineProgress) \
 	{ \
 		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
@@ -233,7 +251,9 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMyDude); \
 	FORCEINLINE static uint32 __PPO__CameraComponent() { return STRUCT_OFFSET(AMyDude, CameraComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraArm() { return STRUCT_OFFSET(AMyDude, CameraArm); } \
 	FORCEINLINE static uint32 __PPO__SocketLocation() { return STRUCT_OFFSET(AMyDude, SocketLocation); } \
-	FORCEINLINE static uint32 __PPO__CameraTimeline() { return STRUCT_OFFSET(AMyDude, CameraTimeline); }
+	FORCEINLINE static uint32 __PPO__CameraTimeline() { return STRUCT_OFFSET(AMyDude, CameraTimeline); } \
+	FORCEINLINE static uint32 __PPO__RecoilTimeline() { return STRUCT_OFFSET(AMyDude, RecoilTimeline); } \
+	FORCEINLINE static uint32 __PPO__SidewaysTimeline() { return STRUCT_OFFSET(AMyDude, SidewaysTimeline); }
 
 
 #define Crossroad_Source_Crossroad_MyDude_h_12_PROLOG \

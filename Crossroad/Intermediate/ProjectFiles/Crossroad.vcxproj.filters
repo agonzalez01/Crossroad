@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Crossroad.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{8FC3E3B1-C25E-4C02-862A-7779C9965094}</UniqueIdentifier>
+      <UniqueIdentifier>{8775B8CB-741C-4E51-9435-68F290E96062}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Crossroad.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{17F64F2E-026C-4C7B-A37E-D04CF538DA47}</UniqueIdentifier>
+      <UniqueIdentifier>{89DB6AA0-C2D5-4864-8D75-B8C60D604F9B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Crossroad">
-      <UniqueIdentifier>{CE365E3D-F18C-454F-A963-335349207F3F}</UniqueIdentifier>
+      <UniqueIdentifier>{F5DAEE6C-D25D-4616-865C-A7C52D901830}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Crossroad\AnimInstanceReplicator.cpp">
       <Filter>Source\Crossroad</Filter>

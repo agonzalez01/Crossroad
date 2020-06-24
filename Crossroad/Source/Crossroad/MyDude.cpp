@@ -25,6 +25,7 @@
 // Sets default values
 AMyDude::AMyDude()
 {
+
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -48,7 +49,15 @@ AMyDude::AMyDude()
 	CameraFOV = 90.f;
 	InitialFOV = 90.f;
 	FinalFOV = 60.f;
+
+	RecoilUp = -.2f;
+	RecoilSideways = -.2f;
+	isRecoil = false;
+	isRightRecoil = false;
+	isLeftRecoil = false;
 	
+	RecoilUpCount = 0;
+	RecoilSidewaysCount = 0;
 
 	CameraArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	CameraArm->SetupAttachment(GetCapsuleComponent());
@@ -64,15 +73,22 @@ AMyDude::AMyDude()
 	DudeMesh->bCastDynamicShadow = true;
 	DudeMesh->CastShadow = false;*/
 
-	SocketLocation = CreateDefaultSubobject<USceneComponent>(TEXT("Socket"));
+	//SocketLocation = CreateDefaultSubobject<USceneComponent>(TEXT("Socket"));
 	//SocketLocation->SetupAttachment(GetMesh(), FName("SMG_Barrel"));
-	SocketLocation->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepWorldTransform, FName("SMG_Barrel"));
-	//SocketLocation->SetRelativeLocation(GetMesh()->GetSocketLocation(FName("SMG_Barrel")));
+	//SocketLocation->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepWorldTransform, FName("SMG_Barrel"));
+	////SocketLocation->SetRelativeLocation(GetMesh()->GetSocketLocation(FName("SMG_Barrel")));
 
-	RotateBro = CameraArm->GetComponentRotation();
+	//RotateBro = CameraArm->GetComponentRotation();
 	//SetRootComponent(CameraComponent);
 	CameraTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("Timeline"));
 	InterpFunction.BindUFunction(this, FName("TimelineProgress"));
+
+	RecoilTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("Recoil timeline"));
+	RecoilInterpFunction.BindUFunction(this, FName("RecoilTimelineProgress"));
+
+	/*SidewaysTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("Recoil sideways Timeline"));
+	RecoilSidewaysInterpFunction.BindUFunction(this, FName("RecoilSidewaysTimelineProgress"));*/
+
 
 
 }
@@ -82,64 +98,33 @@ void AMyDude::TImelineProgress(float value)
 	CameraComponent->SetFieldOfView(FMath::Lerp(InitialFOV, FinalFOV, value));
 }
 
-void AMyDude::JustSetThem()
+void AMyDude::RecoilTimelineProgress(float value)
 {
-	canMove = canMove;
-	movingBack = movingBack;
-	movingRight = movingRight;
-	movingLeft = movingLeft;
-	isMoving = isMoving;
-	isAiming = isAiming;
-	isShooting = isShooting;
-	isADS = isADS;
+	if (SideRecoil)
+	{
+		if (RecoilSidewaysCount > 10)
+		{
+			AddControllerYawInput(FMath::Lerp(0.2f, RecoilSideways, value));
+		}
+
+		else
+		{
+			AddControllerYawInput(FMath::Lerp(-.1f, RecoilSideways, value));
+		}
+	}
+
+	else 
+	{
+		AddControllerPitchInput(FMath::Lerp(0.f, RecoilUp, value));
+	}
 }
 
-void AMyDude::OnRep_isMoving()
-{
-	isMoving = isMoving;
-}
+//void AMyDude::RecoilSidewaysTimelineProgress(float value)
+//{
+//	AddControllerYawInput(FMath::Lerp(0.f, RecoilSideways, value));
+//}
 
-void AMyDude::OnRep_canMove()
-{
-	canMove = canMove;
-}
-
-void AMyDude::OnRep_movingBack()
-{
-	movingBack = movingBack;
-}
-
-void AMyDude::OnRep_movingLeft()
-{
-	movingLeft = movingLeft;
-}
-
-void AMyDude::OnRep_movingRight()
-{
-	movingRight = movingRight;
-}
-
-void AMyDude::OnRep_isAiming()
-{
-	isAiming = isAiming;
-}
-
-void AMyDude::OnRep_isShooting()
-{
-	isShooting = isShooting;
-}
-
-void AMyDude::SetAllVariables_Implementation()
-{
-	canMove = true;
-	movingBack = movingBack;
-	movingRight = movingRight;
-	movingLeft = movingLeft;
-	isMoving = isMoving;
-	isAiming = isAiming;
-	isShooting = isShooting;
-	isADS = isADS;
-}
+//
 
 // Called when the game starts or when spawned
 void AMyDude::BeginPlay()
@@ -151,7 +136,17 @@ void AMyDude::BeginPlay()
 		CameraTimeline->SetLooping(false);
 	}
 
+	if (RecoilCurveFloat)
+	{
+		RecoilTimeline->AddInterpFloat(RecoilCurveFloat, RecoilInterpFunction);
+		RecoilTimeline->SetLooping(false);
+	}
 
+	if (RecoilSidewaysCurveFloat)
+	{
+		SidewaysTimeline->AddInterpFloat(RecoilSidewaysCurveFloat, RecoilSidewaysInterpFunction);
+		SidewaysTimeline->SetLooping(false);
+	}
 
 	
 }
@@ -180,7 +175,17 @@ void AMyDude::Tick(float DeltaTime)
 		SetActorRotation(ArmRotation, ETeleportType::None);
 	}
 
-	SetAllVariables();
+	if (GetVelocity().Size() != 0)
+	{
+		isMoving = true;
+	}
+
+	else if((GetVelocity().Size() == 0))
+	{
+		isMoving = false;
+	}
+
+	//SetAllVariables();
 
 	/*FVector ArmForward = CameraArm->GetForwardVector();
 	FRotator ArmRotator = CameraArm->GetComponentRotation();
@@ -239,7 +244,7 @@ void AMyDude::OnFire()
 void AMyDude::StartFire()
 {
 
-	if (isAiming)
+	if (isAiming || isMoving)
 	{
 		FireShot();
 		GetWorldTimerManager().SetTimer(HandleFireRate, this, &AMyDude::FireShot, FireRate, true);
@@ -255,14 +260,15 @@ void AMyDude::StartFire()
 
 void AMyDude::FireShot()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, TEXT("Called fire shot"));
 	isShooting = true;
 	isAiming = true;
 	FHitResult hit;
 
 	const float Range = 20000.f;
 	const FVector StartTrace = GetMesh()->GetSocketLocation(FName("SMG_Barrel"));
-	const FVector EndTrace = (SocketLocation->GetForwardVector() * Range) + StartTrace;
-		//(CameraComponent->GetForwardVector() * Range) + StartTrace;
+	const FVector EndTrace = (CameraComponent->GetForwardVector() * Range) + StartTrace;
+		//(CameraComponent->GetForwardVector() * Range) + StartTrace; (SocketLocation->GetForwardVector() * Range) + StartTrace;
 
 	FCollisionQueryParams QueryParams = FCollisionQueryParams(SCENE_QUERY_STAT(WeaponTrace), false, this);
 
@@ -295,12 +301,56 @@ void AMyDude::FireShot()
 			AnimInstance->Montage_Play(FireAnimation, 1.f);
 		} */
 	}
+	if (!isRecoil)
+	{
+		isRecoil = true;
+		RecoilTimeline->PlayFromStart();
+	}
+
+	if (RecoilUpCount < 10)
+	{
+		RecoilUpCount += 1;
+		GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString::FromInt(RecoilUpCount));// TEXT("Setting can run"));
+	}
+
+	if (RecoilUpCount >= 10)
+	{
+		if (!isLeftRecoil)
+		{
+			isLeftRecoil = true;
+			RecoilTimeline->Stop();
+			SideRecoil = true;
+			RecoilTimeline->PlayFromStart();
+		}
+		RecoilSidewaysCount += 1;
+
+		if (RecoilSidewaysCount > 10 && !isRightRecoil)
+		{
+			isRightRecoil = true;
+			RecoilTimeline->Stop();
+			RecoilSideways = .4f;
+			RecoilTimeline->PlayFromStart();
+		}
+	}
+
+	
+
+	//AddControllerPitchInput(-.15f);
 }
 
 void AMyDude::StopFire()
 {
 	GetWorldTimerManager().ClearTimer(HandleFireRate);
 	isShooting = false;
+	isRecoil = false;
+	isLeftRecoil = false;
+	isRightRecoil = false;
+	SideRecoil = false;
+	RecoilTimeline->Stop();
+	SidewaysTimeline->Stop();
+	RecoilUpCount = 0;
+	RecoilSidewaysCount = 0;
+	RecoilSideways = -.2f;
 	if (!isADS)
 	{
 		isAiming = false;
@@ -390,5 +440,70 @@ void AMyDude::TurnAtRate(float rate)
 void AMyDude::LookUpAtRate(float rate)
 {
 	AddControllerPitchInput(rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
+}
+
+
+
+
+
+
+
+void AMyDude::JustSetThem()
+{
+	canMove = canMove;
+	movingBack = movingBack;
+	movingRight = movingRight;
+	movingLeft = movingLeft;
+	isMoving = isMoving;
+	isAiming = isAiming;
+	isShooting = isShooting;
+	isADS = isADS;
+}
+
+void AMyDude::OnRep_isMoving()
+{
+	isMoving = isMoving;
+}
+
+void AMyDude::OnRep_canMove()
+{
+	canMove = canMove;
+}
+
+void AMyDude::OnRep_movingBack()
+{
+	movingBack = movingBack;
+}
+
+void AMyDude::OnRep_movingLeft()
+{
+	movingLeft = movingLeft;
+}
+
+void AMyDude::OnRep_movingRight()
+{
+	movingRight = movingRight;
+}
+
+void AMyDude::OnRep_isAiming()
+{
+	isAiming = isAiming;
+}
+
+void AMyDude::OnRep_isShooting()
+{
+	isShooting = isShooting;
+}
+
+void AMyDude::SetAllVariables_Implementation()
+{
+	canMove = true;
+	movingBack = movingBack;
+	movingRight = movingRight;
+	movingLeft = movingLeft;
+	isMoving = isMoving;
+	isAiming = isAiming;
+	isShooting = isShooting;
+	isADS = isADS;
 }
 

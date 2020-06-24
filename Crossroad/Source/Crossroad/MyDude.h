@@ -29,6 +29,12 @@ class CROSSROAD_API AMyDude : public ACharacter
 		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		class UTimelineComponent* CameraTimeline;
 
+		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Recoil, meta = (AllowPrivateAccess = "true"))
+		class UTimelineComponent* RecoilTimeline;
+
+		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = RecoilSide, meta = (AllowPrivateAccess = "true"))
+		class UTimelineComponent* SidewaysTimeline;
+
 
 
 
@@ -51,6 +57,10 @@ protected:
 	void StopFire();
 
 	FTimerHandle HandleFireRate; 
+
+	FTimerHandle HandleRecoil;
+
+	FTimerHandle HandleRecoilSideways;
 
 	void ADS();
 
@@ -93,6 +103,34 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Timeline)
 		float FinalFOV;
 
+	UFUNCTION()
+	void RecoilTimelineProgress(float value);
+
+	UPROPERTY()
+	FTimeline RecoilCurveTimeline;
+
+	FOnTimelineFloat RecoilInterpFunction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = RecoilTimeline)
+	UCurveFloat* RecoilCurveFloat;
+
+	/*UFUNCTION()
+	void RecoilSidewaysTimelineProgress(float value);*/
+
+	UPROPERTY()
+	FTimeline RecoilSidewaysCurveTimeline;
+
+	FOnTimelineFloat RecoilSidewaysInterpFunction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = RecoilTimeline)
+	UCurveFloat* RecoilSidewaysCurveFloat;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = RecoilTimeline)
+		float  RecoilUp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = RecoilTimeline)
+		float RecoilSideways;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera)
 		float BaseTurnRate; 
 
@@ -122,6 +160,24 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
 		bool isADS;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool isRecoil;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool isLeftRecoil;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool isRightRecoil;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		bool SideRecoil;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		int RecoilUpCount;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		int RecoilSidewaysCount;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
 		FRotator RotateBro;
